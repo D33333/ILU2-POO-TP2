@@ -80,7 +80,7 @@ public class Village {
 		if (indiceEtal >= 0) {
 			marche.utiliserEtal(indiceEtal, vendeur, produit, nbProduit);
 		}
-		return indiceEtal;
+		return indiceEtal++;
 	}
 
 	public void partirVendeur(Gaulois vendeur) {
