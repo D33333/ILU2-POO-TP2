@@ -29,7 +29,8 @@ class ControlVerifierIdentiteTest {
 	@Test
 	void testVerifierIdentite() {
 		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village);
-		assertFalse(controlVerifierIdentite.verifierIdentite(abraracourcix.getNom()),"villageois doit être un vendeur");
+		assertTrue(controlVerifierIdentite.verifierIdentite(abraracourcix.getNom()),"le chef est un habitant");
+		assertFalse(controlVerifierIdentite.verifierIdentite("Intrus"));
 	}
 
 }
