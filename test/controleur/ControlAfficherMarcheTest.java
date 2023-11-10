@@ -36,7 +36,7 @@ class ControlAfficherMarcheTest {
 		assertEquals(donneesMarche[0],abraracourcix.getNom());
 		assertEquals(donneesMarche[1],"5");
 		assertEquals(donneesMarche[2],"casque");
-		assertTrue(donneesMarche.length == 3);
+		assertEquals(donneesMarche.length,3);
 	}
 
 }

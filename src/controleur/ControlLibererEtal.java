@@ -23,13 +23,13 @@ public class ControlLibererEtal {
 	 *         quantité de produit vendu
 	 */
 	public String[] libererEtal(String nomVendeur) {
-		System.out.println(nomVendeur);
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
 		String[] donneesEtal;
 		if (etal == null) {
 			donneesEtal = new String[]{"false","","",""};
 		} else {
 			donneesEtal = etal.etatEtal();
+			etal.libererEtal();
 		}
 		return donneesEtal;
 	}

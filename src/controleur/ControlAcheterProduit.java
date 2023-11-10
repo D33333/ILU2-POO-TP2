@@ -27,6 +27,9 @@ public class ControlAcheterProduit {
 	
 	public int acheterProduit(String nomVendeur, int nbProduits) {
 		Etal etalVendeur = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		if (etalVendeur == null) {
+			return 0;
+		}
 		return etalVendeur.acheterProduit(nbProduits);
 	}
 }

@@ -55,6 +55,7 @@ class ControlLibererEtalTest {
 		assertEquals(controlLibererEtal.libererEtal(panoramix.getNom())[0],"true");
 		assertEquals(controlLibererEtal.libererEtal(abraracourcix.getNom())[0],"false");
 		assertEquals(controlLibererEtal.libererEtal("Intrus")[0],"false");
+		village.partirVendeur(panoramix);
 	}
 
 }

@@ -26,8 +26,8 @@ class ControlAcheterProduitTest {
 		village.setChef(abraracourcix);
 		village.ajouterHabitant(panoramix);
 		village.ajouterHabitant(asterix);
-		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
-		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(village);
+		controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(village);
+		controlVerifierIdentite = new ControlVerifierIdentite(village);
 	}
 	
 	@Test
@@ -57,11 +57,13 @@ class ControlAcheterProduitTest {
 
 	@Test
 	void testAcheterProduit() {
+		assertNotNull(controlTrouverEtalVendeur);
 		ControlAcheterProduit controlAcheterProduit = new ControlAcheterProduit(controlVerifierIdentite, controlTrouverEtalVendeur, village);
 		village.installerVendeur(abraracourcix, "casque", 5);
 		assertEquals(controlAcheterProduit.acheterProduit(abraracourcix.getNom(), 3),3);
 		assertEquals(controlAcheterProduit.acheterProduit("Intrus", 3),0);
 		assertEquals(controlAcheterProduit.acheterProduit(abraracourcix.getNom(), 45),2);
+		assertEquals(controlAcheterProduit.acheterProduit(abraracourcix.getNom(), -5),0);
 	}
 
 }
